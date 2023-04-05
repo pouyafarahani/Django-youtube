@@ -19,7 +19,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 LOCAL_APPS = [
-    'apps.home.apps.HomeConfig'
+    'apps.common.apps.CommonConfig',
+    'apps.home.apps.HomeConfig',
+    'apps.users.apps.UsersConfig',
 ]
 
 THIRD_PARTY_APPS = [
@@ -95,6 +97,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Custom User
+AUTH_USER_MODEL = 'users.BaseUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
