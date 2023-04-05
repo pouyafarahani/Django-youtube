@@ -1,3 +1,4 @@
+import os.path
 from pathlib import Path
 from environs import Env
 
@@ -18,7 +19,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 LOCAL_APPS = [
-    #
+    'apps.home.apps.HomeConfig'
 ]
 
 THIRD_PARTY_APPS = [
@@ -70,12 +71,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
